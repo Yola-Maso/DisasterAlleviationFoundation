@@ -1,0 +1,56 @@
+﻿
+@model DisasterAlleviationFoundation.Pages.GoodsDonation.GoodsDonationsListModel
+
+<p>
+    <a asp-page="GoodsDonationCreate">Create New</a>
+</p>
+<div class="table-container">
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsDonations[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsDonations[0].NumOfItems)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsDonations[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsDonations[0].IsAnonymous)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.GoodsDonations[0].CategoryName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.GoodsDonations) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumOfItems)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IsAnonymous)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CategoryName)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.GoodID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.GoodID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.GoodID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</div>

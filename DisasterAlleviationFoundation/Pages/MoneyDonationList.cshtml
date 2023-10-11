@@ -1,0 +1,8 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.MonetaryDonation.MoneteryDonationListModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-center">
+    @await Html.PartialAsync("/Pages/MonetaryDonation/MoneteryDonationList.cshtml", Model)
+</div>

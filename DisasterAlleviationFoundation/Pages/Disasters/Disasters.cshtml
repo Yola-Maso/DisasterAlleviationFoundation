@@ -1,0 +1,43 @@
+﻿
+@model DisasterAlleviationFoundation.Pages.Disasters.DisastersModel
+
+<h4>Disaster</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Disaster.StartDate" class="control-label"></label>
+                <input asp-for="Disaster.StartDate" class="form-control" />
+                <span asp-validation-for="Disaster.StartDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disaster.EndDate" class="control-label"></label>
+                <input asp-for="Disaster.EndDate" class="form-control" />
+                <span asp-validation-for="Disaster.EndDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disaster.Location" class="control-label"></label>
+                <input asp-for="Disaster.Location" class="form-control" />
+                <span asp-validation-for="Disaster.Location" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Disaster.Description" class="control-label"></label>
+                <input asp-for="Disaster.Description" class="form-control" />
+                <span asp-validation-for="Disaster.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="ListDisasters">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

@@ -1,0 +1,48 @@
+﻿
+@model DisasterAlleviationFoundation.Pages.GoodsDonation.CreateGoodsDonationModel
+
+<h4>GoodsDonations</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="GoodsDonations.Date" class="control-label"></label>
+                <input asp-for="GoodsDonations.Date" class="form-control" />
+                <span asp-validation-for="GoodsDonations.Date" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GoodsDonations.NumOfItems" class="control-label"></label>
+                <input asp-for="GoodsDonations.NumOfItems" class="form-control" />
+                <span asp-validation-for="GoodsDonations.NumOfItems" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="GoodsDonations.Description" class="control-label"></label>
+                <input asp-for="GoodsDonations.Description" class="form-control" />
+                <span asp-validation-for="GoodsDonations.Description" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="GoodsDonations.IsAnonymous" /> @Html.DisplayNameFor(model => model.GoodsDonations.IsAnonymous)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="GoodsDonations.CategoryName" class="control-label"></label>
+                <input asp-for="GoodsDonations.CategoryName" class="form-control" />
+                <span asp-validation-for="GoodsDonations.CategoryName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="GoodsList">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

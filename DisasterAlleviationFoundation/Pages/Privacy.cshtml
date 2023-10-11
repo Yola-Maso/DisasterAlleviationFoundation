@@ -1,0 +1,8 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.User.LoginModel
+@{
+    ViewData["Title"] = "Home page";
+}
+<div class="text-center">
+    @await Html.PartialAsync("/Pages/User/Login.cshtml", Model)
+</div>

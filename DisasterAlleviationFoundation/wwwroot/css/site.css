@@ -1,0 +1,116 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background: linear-gradient(135deg, orange, #9900cc);
+    color: black;
+}
+form {
+    width: 300px; /* Adjust the width as needed */
+    margin: 0 auto; /* Center the form horizontally */
+    background-color: white; /* Set the background color to white */
+    padding: 20px; /* Add padding for spacing inside the form */
+    border: 1px solid #ccc; /* Add a border for clarity */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for depth */
+    border-radius: 10px; /* Add rounded corners */
+}
+
+    /* Style form elements as needed */
+    form input[type="text"],
+    form input[type="password"],
+    form select,
+    form textarea,
+    form button {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+        /* Style the submit button */
+        form button[type="submit"] {
+            background-color: #007bff; /* Blue background color for the submit button */
+            color: white;
+            cursor: pointer;
+            border: none; /* Remove button border */
+            border-radius: 4px; /* Add rounded corners to the button */
+        }
+
+            /* Add hover effect to the submit button */
+            form button[type="submit"]:hover {
+                background-color: #0056b3; /* Darker blue color on hover */
+            }
+
+/* Style the table container */
+.table-container {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Reset default table styles */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+}
+
+    /* Style table headers */
+    .table th {
+        background-color: #007bff;
+        color: #fff;
+        padding: 12px 16px;
+        text-align: left;
+    }
+
+    /* Style table cells */
+    .table td {
+        padding: 12px 16px;
+        text-align: left;
+        border-bottom: 1px solid #ccc;
+    }
+
+    /* Style table rows on hover */
+    .table tbody tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    /* Style links in table cells */
+    .table a {
+        text-decoration: none;
+        color: #007bff;
+        margin-right: 10px;
+    }
+
+    /* Style table buttons as buttons */
+    .table a {
+        padding: 8px 16px;
+        border: 1px solid #007bff;
+        background-color: #fff;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+    }
+
+        /* Add a hover effect to table buttons */
+        .table a:hover {
+            background-color: #007bff;
+            color: #fff;
+        }
+
+
+
