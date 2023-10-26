@@ -1,0 +1,33 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.Allocation.MoneyAllocationModel
+
+<h4>Money Allocation</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MoneyAllocation.DisasterID" class="control-label">Disaster ID</label>
+                <select asp-for="MoneyAllocation.DisasterID" class="form-control" asp-items="ViewBag.DisasterID"></select>
+                <span asp-validation-for="MoneyAllocation.DisasterID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MoneyAllocation.MonetaryID" class="control-label">Monetary ID</label>
+                <select asp-for="MoneyAllocation.MonetaryID" class="form-control" asp-items="ViewBag.MonetaryID"></select>
+                <span asp-validation-for="MoneyAllocation.MonetaryID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
