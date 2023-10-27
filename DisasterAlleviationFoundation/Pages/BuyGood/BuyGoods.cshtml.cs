@@ -52,7 +52,7 @@ namespace DisasterAlleviationFoundation.Pages.BuyGood
             _context.BuyGoods.Add(BuyGoods);
             await _context.SaveChangesAsync();
 
-            return RedirectToPage("./Index");
+            return RedirectToPage("/BuyGood/BuyGoods");
         }
 
         private void CalculateAvailableMoney()
