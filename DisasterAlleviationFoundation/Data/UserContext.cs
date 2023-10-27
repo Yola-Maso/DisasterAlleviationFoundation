@@ -16,6 +16,7 @@ namespace DisasterAlleviationFoundation.Data
         public DbSet<Disaster> Disaster { get; set; }
         public DbSet<GoodsAllocation> GoodsAllocation { get; set; }
         public DbSet<MoneyAllocation> MoneyAllocation { get; set; }
+        public DbSet<BuyGoods> BuyGoods { get; set; }
     }
 }
 
