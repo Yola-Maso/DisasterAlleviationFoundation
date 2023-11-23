@@ -58,7 +58,7 @@ namespace DisasterAlleviationFoundation.Pages
                                                 .Join(_context.BuyGoods,
                                                     bga => bga.BuyGoodID,
                                                     bg => bg.BuyGoodID,
-                                                    (bga, bg) => bg.Amount)
+                                                    (bga, bg) => bg.NumOfItems)
                                                 .Sum()
                 })
                 .ToList();
@@ -73,7 +73,7 @@ namespace DisasterAlleviationFoundation.Pages
             public string Description { get; set; }
             public decimal TotalMonetaryDonations { get; set; }
             public int TotalGoodsDonations { get; set; }
-            public decimal TotalBoughtGoodsDonations { get; set; }
+            public int TotalBoughtGoodsDonations { get; set; }
         }
     }
 }
