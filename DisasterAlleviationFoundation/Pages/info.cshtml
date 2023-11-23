@@ -1,0 +1,56 @@
+﻿@page
+@model DisasterAlleviationFoundation.Pages.infoModel
+
+<h4>Total Donations Information</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <dl class="row">
+            <dt class="col-sm-6">Total Monetary Donations:</dt>
+            <dd class="col-sm-6">@Model.TotalMonetaryDonations.ToString("C")</dd>
+
+            <dt class="col-sm-6">Total Goods Donations:</dt>
+            <dd class="col-sm-6">@Model.TotalGoodsDonations</dd>
+        </dl>
+    </div>
+</div>
+
+<h4>Active Disasters with Allocations</h4>
+<hr />
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Disaster ID</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Location</th>
+            <th>Description</th>
+            <th>Total Monetary Donations</th>
+            <th>Total Goods Donations</th>
+            <th>Total Bought Goods Donations</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var disaster in Model.ActiveDisasters)
+        {
+            <tr>
+                <td>@disaster.DisasterID</td>
+                <td>@disaster.StartDate.ToShortDateString()</td>
+                <td>@disaster.EndDate.ToShortDateString()</td>
+                <td>@disaster.Location</td>
+                <td>@disaster.Description</td>
+                <td>@disaster.TotalMonetaryDonations.ToString("C")</td>
+                <td>@disaster.TotalGoodsDonations</td>
+                <td>@disaster.TotalBoughtGoodsDonations.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
