@@ -19,12 +19,18 @@ namespace DisasterAlleviationFoundation.Pages
 
         public decimal TotalMonetaryDonations { get; set; }
         public int TotalGoodsDonations { get; set; }
+        public int TotalGoodDonations { get; set; }
+        public int TotalMoneyDonations { get; set; }
         public List<DisasterWithAllocation> ActiveDisasters { get; set; }
 
         public void OnGet()
         {
             // Calculate total monetary donations
             TotalMonetaryDonations = _context.MonetaryDonations.Sum(d => d.Amount);
+
+            TotalMoneyDonations = _context.MonetaryDonations.Count();
+
+            TotalGoodDonations = _context.GoodsDonations.Count();
 
             // Calculate total number of goods donations
             TotalGoodsDonations = _context.GoodsDonations.Sum(g => g.NumOfItems);
@@ -59,7 +65,7 @@ namespace DisasterAlleviationFoundation.Pages
                                                     bga => bga.BuyGoodID,
                                                     bg => bg.BuyGoodID,
                                                     (bga, bg) => bg.NumOfItems)
-                                                .Sum()
+                                                .Count()
                 })
                 .ToList();
         }
